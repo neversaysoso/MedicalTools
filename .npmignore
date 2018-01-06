@@ -1,0 +1,8 @@
+node_modules
+build/example
+.*
+/*.js
+/*.json
+!package.json
+!lerna.json
+npm-debug.log

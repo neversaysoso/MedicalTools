@@ -1,0 +1,264 @@
+export const datalist = [{
+  name: 'A通用模板',
+  py: 'a',
+  path: 'common'
+}, {
+  name: '补钠计算',
+  py: 'b'
+}, {
+  name: '补水量',
+  py: 'b'
+}, {
+  name: '创伤时基础能耗估计',
+  py: 'c'
+}, {
+  name: '低钠血症时补氯化钠值',
+  py: 'd'
+}, {
+  name: '低钠血症时补生理盐水',
+  py: 'd'
+}, {
+  name: '二氧化碳生成量',
+  py: 'e'
+}, {
+  name: '儿童补液',
+  py: 'e'
+}, {
+  name: '腹部外科心脏风险指数',
+  py: 'f'
+}, {
+  name: '腹部外科心脏风险指数',
+  py: 'f'
+}, {
+  name: '肝病MELD评分',
+  py: 'g'
+}, {
+  name: '功能残气量',
+  py: 'g'
+}, {
+  name: '肝硬化死亡率Child-Pugh评分',
+  py: 'g',
+  path: 'ganyinhua'
+}, {
+  name: '呼吸商',
+  py: 'h'
+}, {
+  name: '呼吸指数',
+  py: 'h'
+}, {
+  name: '激素剂量换算',
+  py: 'j'
+}, {
+  name: '基础能耗',
+  py: 'j'
+}, {
+  name: '酒精性肝炎Maddrey判别函数',
+  py: 'j'
+}, {
+  name: '颅内出血体积计算',
+  py: 'l'
+}, {
+  name: '每搏输出量',
+  py: 'm'
+}, {
+  name: '内生肌酐清除率',
+  py: 'n'
+}, {
+  name: '脑灌注压',
+  py: 'n'
+}, {
+  name: '尿羟脯氨酸指数',
+  py: 'n'
+}, {
+  name: '平均血压',
+  py: 'p'
+}, {
+  name: '气道阻力',
+  py: 'q'
+}, {
+  name: '肾衰指数',
+  py: 's'
+}, {
+  name: '输液计算器',
+  py: 's'
+}, {
+  name: '手术中失血量估算方法',
+  py: 's'
+}, {
+  name: '烧伤补液',
+  py: 's'
+}, {
+  name: '体重指数',
+  py: 't'
+}, {
+  name: '体表面积',
+  py: 't'
+}, {
+  name: '通气血流比',
+  py: 't'
+}, {
+  name: '糖化血红蛋白评估平均血糖',
+  py: 't'
+}, {
+  name: '下消化道大出血风险评估',
+  py: 'x'
+}, {
+  name: '心脏射血指数',
+  py: 'x'
+}, {
+  name: '心房纤颤卒中风险评分',
+  py: 'x'
+}, {
+  name: '血浆渗透压',
+  py: 'x'
+}, {
+  name: '小儿基础代谢率',
+  py: 'x'
+}, {
+  name: '小儿药物计算公式1-按体表面积计算',
+  py: 'x'
+}, {
+  name: '小儿药物计算公式2-按年龄计算',
+  py: 'x'
+}, {
+  name: '小儿药物计算公式3-按剂量计算',
+  py: 'x'
+}, {
+  name: '孕周计算',
+  py: 'y'
+}, {
+  name: '孕妇增加体重',
+  py: 'y',
+  path: 'yunfu'
+}, {
+  name: '亚洲人骨质疏松自我筛查工具',
+  py: 'y'
+}, {
+  name: '胰岛素初始用量计算器',
+  py: 'y'
+}, {
+  name: '左心室收缩/舒张末期容积指数',
+  py: 'z'
+}]
+
+export const yunfudata = [{
+  title: '孕周',
+  value: '增加体重(Kg)',
+  type: 'title'
+}, {
+  title: '8',
+  value: '0.11~1.02'
+}, {
+  title: '10',
+  value: '0.34~1.36'
+}, {
+  title: '12',
+  value: '0.91~1.18'
+}, {
+  title: '14',
+  value: '1.59~2.49'
+}, {
+  title: '16',
+  value: '2.49~3.86'
+}, {
+  title: '18',
+  value: '3.63~5.22'
+}, {
+  title: '20',
+  value: '4.76~6.58'
+}, {
+  title: '22',
+  value: '5.67~7.94'
+}, {
+  title: '24',
+  value: '6.58~9.19'
+}, {
+  title: '26',
+  value: '7.48~10.43'
+}, {
+  title: '28',
+  value: '8.28~11.34'
+}, {
+  title: '30',
+  value: '9.07~12.25'
+}, {
+  title: '32',
+  value: '9.75~13.15'
+}, {
+  title: '34',
+  value: '10.42~13.72'
+}, {
+  title: '36',
+  value: '10.60~14.29'
+}, {
+  title: '38',
+  value: '10.89~14.52'
+}, {
+  title: '40',
+  value: '10.89~14.74'
+}]
+
+export const ganyinhuadata = [{
+  title: '总胆红素',
+  options: [{
+    title: '<2 mg/dL (<34 μmol/L)',
+    value: 1
+  }, {
+    title: '2-3 mg/dL (34-50 μmol/L)',
+    value: 2
+  }, {
+    title: '>3 mg/dL (>50 μmol/L)',
+    value: 3
+  }]
+}, {
+  title: '白蛋白',
+  options: [{
+    title: '>3.5 g/dL (>35 g/L)',
+    value: 1
+  }, {
+    title: '2.8-3.5 g/dL (28-35 g/L)',
+    value: 2
+  }, {
+    title: '<2.8 g/dL (<28 g/L)',
+    value: 3
+  }]
+}, {
+  title: '国际标准化比率（INR）',
+  options: [{
+    title: '<1.7',
+    value: 1
+  }, {
+    title: '1.7-2.2',
+    value: 2
+  }, {
+    title: '>2.2',
+    value: 3
+  }]
+}, {
+  title: '腹水',
+  options: [{
+    title: '无腹水',
+    value: 1
+  }, {
+    title: '能够控制的腹水',
+    value: 2
+  }, {
+    title: '难以控制的腹水',
+    value: 3
+  }]
+}, {
+  title: '脑病',
+  options: [{
+    title: '无脑病',
+    value: 1,
+    checked: false
+  }, {
+    title: '能够控制的脑病',
+    value: 2,
+    checked: false
+  }, {
+    title: '难以控制的脑病',
+    value: 3,
+    checked: false
+  }]
+}]
