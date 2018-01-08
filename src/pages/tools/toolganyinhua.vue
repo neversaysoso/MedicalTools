@@ -1,62 +1,73 @@
 <template>
-  <div class="fulldiv">
-    <scroller>
-      <div v-for="(i,index) in list" :key="index">
-        <item-title :title="i.title"></item-title>
-        <wxc-radio
-          ref="radio"
-          :list="i.options"
-          @wxcRadioListChecked="radioListChecked">
-        </wxc-radio>
-      </div>
-      <div class="btndiv">
-        <wxc-button 
-          text="清空"
-          type="normal"
-          :btnStyle="btnstyle"
-          @wxcButtonClicked="qkClick">
-        </wxc-button>
-        <wxc-button 
-          text="计算"
-          type="yellow"
-          :btnStyle="btnstyle">
-        </wxc-button>
-      </div>
-    </scroller>
-  </div>
+  <scroller>
+    <div v-for="(i,index) in list" :key="index">
+      <title-bar :title="i.title"></title-bar>
+      <wxc-radio
+        ref="radio"
+        :list="i.options">
+      </wxc-radio>
+    </div>
+    <btn-box
+      @cancelClick="cancelClick"
+      @scoreClick="scoreClick">
+    </btn-box>
+    <Result
+      :result="result">
+    </Result>
+  </scroller>
 </template>
-<style scoped>
-.btndiv {
-  width: 750px;
-  padding-left: 30px;
-  padding-top: 30px;
-  padding-right: 30px;
-  padding-bottom: 30px;
-  flex-direction: row;
-  justify-content: space-between;
-}
-</style>
 <script>
-import { WxcButton, WxcRadio } from "weex-ui";
-import ItemTitle from "../../components/itemtitlebar.vue";
+const modal = weex.requireModule("modal");
+import { WxcRadio } from "weex-ui";
+import TitleBar from "../../components/titlebar.vue";
+import BtnBox from "../../components/btnbox.vue";
+import Result from "../../components/result.vue";
 import { ganyinhuadata } from "../../assets/data.js";
+
 export default {
-  data: () => ({
-    list: ganyinhuadata,
-    btnstyle: {
-      width: "330px"
-    }
-  }),
-  methods: {
-    radioListChecked(e) {},
-    qkClick() {
-      this.$refs.radio[4].list[0].checked = false;
-      setTimeout(() => {
-        this.list = ganyinhuadata;
-      }, 100);
+  data() {
+    return {
+      list: ganyinhuadata,
+      score: "",
+      result: [
+        {
+          label: "评分",
+          value: this.score
+        }
+      ]
+    };
+  },
+  watch: {
+    score(d) {
+      this.result[0].value = d;
     }
   },
-  components: { WxcButton, WxcRadio, ItemTitle }
+  methods: {
+    cancelClick() {
+      for (let i of this.$refs.radio) {
+        i.checkedIndex = -1;
+      }
+      this.score = "";
+    },
+    scoreClick() {
+      let ok = true;
+      let num = 0;
+      for (let i of this.$refs.radio) {
+        if (i.checkedIndex === -1) {
+          ok = false;
+          break;
+        } else {
+          num += i.checkedIndex + 1;
+        }
+      }
+      if (!ok) {
+        modal.toast({ message: "请完成答题后计算", duration: 1 });
+      } else {
+        this.score = num;
+      }
+    }
+  },
+  components: { WxcRadio, TitleBar, Result, BtnBox }
 };
 </script>
 

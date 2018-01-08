@@ -27,7 +27,6 @@ export default {
 }
 .istitle {
   background-color: #fefefe;
-  font-size: 34px;
   font-weight: bold;
   color: #333333;
 }
